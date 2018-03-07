@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>{% block title %}Maxime BOILOT développeur web Clermont Ferrand!{% endblock %}</title>
+        {% block stylesheets %}{% endblock %}
+
+        <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="{{ asset('assets/css/style.css') }}">
+        <link href="https://fonts.googleapis.com/css?family=Poiret+One" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Nanum+Brush+Script" rel="stylesheet">
+
+        <!--/Applications/MAMP/htdocs/blog-symfony/synfony-standard/web/assets/css-->
+    </head>
+    <body>
+
+    <div class="header" alt="fond" style="background-image: url({{ asset('assets/images/header.jpg') }}); background-size: cover;
+            width:100%; height:100%; top:0; left:0; padding-top: 15%; padding-bottom: 15%; text-align: center;">
+
+            <h1 style="margin-bottom: 3%">Maxime BOILOT</h1>
+
+            <h2 style="margin-bottom: 5%">{{ 'base.h2' | trans ({}, 'base') }}
+                <span
+                        class="txt-rotate"
+                        data-period="2000"
+                        data-rotate='[ "{{ 'base.h2-1' | trans ({}, 'base') }}", "{{ 'base.h2-2' | trans ({}, 'base') }}",
+                         "{{ 'base.h2-3' | trans ({}, 'base') }}", "{{ 'base.h2-4' | trans ({}, 'base') }}", "{{ 'base.h2-5' | trans ({}, 'base') }}" ]'></span>
+            </h2>
+
+            <script type="text/javascript">
+            var TxtRotate = function(el, toRotate, period) {
+            this.toRotate = toRotate;
+            this.el = el;
+            this.loopNum = 0;
+            this.period = parseInt(period, 10) || 2000;
+            this.txt = '';
+            this.tick();
+            this.isDeleting = false;
+            };
+
+            TxtRotate.prototype.tick = function() {
+            var i = this.loopNum % this.toRotate.length;
+            var fullTxt = this.toRotate[i];
+
+            if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+            } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+            }
+
+            this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
+
+            var that = this;
+            var delta = 300 - Math.random() * 100;
+
+            if (this.isDeleting) { delta /= 2; }
+
+            if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+            } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+            }
+
+            setTimeout(function() {
+            that.tick();
+            }, delta);
+            };
+
+            window.onload = function() {
+            var elements = document.getElementsByClassName('txt-rotate');
+            for (var i=0; i<elements.length; i++) {
+            var toRotate = elements[i].getAttribute('data-rotate');
+            var period = elements[i].getAttribute('data-period');
+            if (toRotate) {
+            new TxtRotate(elements[i], JSON.parse(toRotate), period);
+            }
+            }
+            };
+
+            </script>
+
+
+            <h3>{{ 'base.title' | trans ({}, 'base') }}</h3>
+
+            <a href="{{ path('contact_page') }}">
+                <button type="button" class="btn btn-outline-warning" style="margin-top: 5%;">{{ 'base.btn' | trans ({}, 'base') }}</button>
+            </a>
+        </div>
+    </div>
+
+    <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link active" href="{{ path('homepage') }}">{{ 'base.nav1' | trans ({}, 'base') }}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('presentation_page') }}">{{ 'base.nav2' | trans ({}, 'base') }}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('cv_page') }}">CV</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="{{ path('competences_page') }}">{{ 'base.nav4' | trans ({}, 'base') }}</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link disabled" href="{{ path('contact_page') }}">Contact</a>
+        </li>
+    </ul>
+
+
+    {% block javascripts %}{% endblock %}
+
+    {% block body %}{% endblock %}
+
+    <div style="background-color: #31363d; padding-top: 8%; padding-bottom: 5%; margin-top: 0; margin-bottom: 0;">
+        <div class="row">
+            <div class="col-2" style="margin-left: 28.5%">
+                <a href="https://www.linkedin.com/in/maxime-boilot-78809a130/" target="_blank"><img src="{{ asset('assets/images/linkedin.png') }}"></a>
+            </div>
+            <div class="col-2">
+                <a href="https://github.com/maxboilot" target="_blank"><img src="{{ asset('assets/images/github.png') }}"></a>
+            </div>
+            <div class="col-2" >
+                <a href="{{ path('contact_page') }}"><img src="{{ asset('assets/images/phone.png') }}"></a>
+            </div>
+        </div>
+
+        <div style="margin: 0 auto; padding-top: 5%; text-align: center">
+            <div  style="display: inline-block; border: 1px solid #dbd7c9; padding: 1%">
+                <a href="" class="ui button" style="text-decoration: none; color: #dbd7c9;">FR</a>
+            </div>
+            <div style="display: inline-block; border: 1px solid #dbd7c9; padding: 1%">
+                <a href="" class="ui button" style="text-decoration: none; color: #dbd7c9">EN</a>
+            </div>
+        </div>
+    </div>
+
+    </body>
+</html>

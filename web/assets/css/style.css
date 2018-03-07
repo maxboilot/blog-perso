@@ -1,0 +1,95 @@
+body {
+    /*overflow:hidden;*/
+}
+#fond {
+    position:absolute;
+    top:0;
+    left:0;
+}
+#fond,#fond img {
+    width:100%;
+    height:100%;
+}
+
+.texte_header{
+    padding-top: 20%;
+    padding-bottom: 20%;
+    text-align: center;
+}
+
+.header{
+    font-family: 'Poiret One', cursive;
+    color: white;
+}
+
+.home-ticker{
+    overflow: hidden;
+    position: relative;
+    display: block;
+}
+
+h1{
+    font-weight: bold;
+    font-size: 80px;
+}
+
+.nav-link{
+    padding-top: 3%;
+    padding-bottom: 3%;
+    font-size: 25px;
+}
+
+.img_competences{
+    margin-left: 30%;
+}
+
+.photo{
+    margin-top: 5%;
+    text-align: center;
+}
+
+.button {
+    margin-top: 5%;
+}
+
+
+-----------------------------
+
+@-webkit-keyframes typing {
+    from { width: 0 }
+    to { width:50% }
+}
+
+@-moz-keyframes typing {
+    from { width: 0 }
+    to { width:50% }
+}
+
+@-webkit-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white}
+}
+
+@-moz-keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: white }
+}
+
+
+.machinebox {
+    font-size:150%;
+    width:50%;
+    white-space:nowrap;
+    overflow:hidden;
+    border-right: .1em solid red;
+
+    -webkit-animation: typing 17s steps(33, end), /*  steps =nbre de caracteres et espaces */
+    blink-caret 1s step-end infinite;
+    -moz-animation: typing 17s steps(33, end),
+    blink-caret 1s step-end infinite;
+}
+
+
+------------------------------
+
+

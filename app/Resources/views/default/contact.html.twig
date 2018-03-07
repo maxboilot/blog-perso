@@ -1,0 +1,48 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% form_theme form_example 'bootstrap_4_horizontal_layout.html.twig' %}
+
+    <h4 style="text-align: center; margin-top: 10%; margin-bottom: 10%; font-family: 'Poiret One', cursive; font-size: 50px">
+        {{ 'contact.title' | trans ({}, 'contact') }}</h4>
+
+
+    <div style="margin: auto; width: 50%">
+        {{ form_start(form_example) }}
+
+        <div style="margin-bottom: 2%">
+            {{ form_label(form_example.name) }} {{ form_widget(form_example.name) }} {{ form_errors(form_example.name) }}
+        </div>
+
+        <div style="margin-bottom: 2%">
+          {{ form_label(form_example.surname) }} {{ form_widget(form_example.surname) }} {{ form_errors(form_example.surname) }}
+        </div>
+
+        <div style="margin-bottom: 2%">
+           {{ form_label(form_example.email) }} {{ form_widget(form_example.email) }} {{ form_errors(form_example.email) }}
+        </div>
+
+        <div style="margin-bottom: 2%">
+
+        {{ form_label(form_example.object) }} {{ form_widget(form_example.object) }} {{ form_errors(form_example.object) }}
+        </div>
+
+        <div style="margin-bottom: 2%">
+            {{ form_label(form_example.message) }} {{ form_widget(form_example.message) }} {{ form_errors(form_example.message) }}
+        </div>
+
+
+        <button class="btn btn-outline-warning" type="submit" style="margin: 8% 45%">
+            {{ 'contact.btn'|trans ({}, 'contact') }}
+        </button>
+
+        {{ form_end(form_example) }}
+    </div>
+
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

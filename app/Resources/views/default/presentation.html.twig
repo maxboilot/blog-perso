@@ -1,0 +1,21 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <img src="{{ asset('assets/images/photo.png') }}" style="margin: 5% 38%">
+
+    <p style="width: 70%; margin: auto; font-family: 'Poiret One', cursive; font-size: 30px">
+        {{ 'presentation.msg' | trans ({}, 'presentation') }}
+    </p>
+
+    <a href="{{ path('contact_page') }}">
+        <button type="button" class="btn btn-outline-warning" style="margin: 5% 42%; text-align: center">{{ 'presentation.btn' | trans ({}, 'presentation') }}</button>
+    </a>
+
+
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}

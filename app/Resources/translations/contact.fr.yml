@@ -1,0 +1,15 @@
+contact:
+  title: "Formulaire de contact"
+  btn: "Envoyer"
+  msg: "Votre message a bien été transféré!"
+  form:
+    name: "Nom"
+    surname: "Prenom"
+    email: "Email"
+    liste:
+      label: "Sujet"
+      contact: "Contact"
+      di: "Demande d'information"
+      devis: "Demande de devis"
+      rdv: "Prise de rendez vous"
+    message: "Message"

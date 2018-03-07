@@ -1,0 +1,15 @@
+contact:
+  title: "Contact form"
+  btn: "Submit"
+  msg: "Your message was transferred well!"
+  form:
+    name: "Name"
+    surname: "Surname"
+    email: "Email"
+    liste:
+      label: "Subject"
+      contact: "Contact"
+      di: "Information request"
+      devis: "Quotation request"
+      rdv: "Fix an appointment"
+    message: "Message"
